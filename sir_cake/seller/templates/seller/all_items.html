@@ -1,0 +1,59 @@
+{% extends 'seller/base-seller.html' %}
+
+{% block title %}-Items{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col">
+            <a href="{% url 'seller_new_item' %}">
+                <i class="bi bi-plus-square-fill new-item-top-icon"></i>
+            </a>
+        </div>
+        <div class="col">
+            {% include 'sir_cake/search-field.html'%}
+        </div>
+    </div>
+
+    <div class="product-grid-container beige-bg">
+        <div class="grid-item-image category-text">image</div>
+        <div class="grid-item-title category-text">title</div>
+        <div class="grid-item-category category-text">category</div>
+        <div class="grid-item-price category-text">price</div>
+        <div class="grid-item-inventory category-text">inventory</div>
+        <div class="grid-item-action category-text">action</div>
+    </div>
+
+    {% if items %}
+    {% for item in items %}
+    <div class="product-grid-container">
+        <a href="{% url 'seller_item_detail' item.pk %}">
+            <div class="grid-item-image all-products-data-text"><img src="{{item.image.url}}" height="100px"></img>
+        </a>
+    </div>
+    <div class="grid-item-title all-products-data-text">{{item.short_title}}</div>
+    <div class="grid-item-category all-products-data-text">{{item.long_category}}</div>
+    <div class="grid-item-price all-products-data-text">{{item.price}}€</div>
+    {% if item.quantity is 0 %}
+    <div class="grid-item-inventory all-products-data-text warning-data-text">{{item.quantity}}</div>
+    {% else %}
+    <div class="grid-item-inventory all-products-data-text">{{item.quantity}}</div>
+    {% endif %}
+    <div class="grid-item-action all-products-data-text">
+        <a href="{% url 'seller_item_detail' item.pk %}"><i class="bi bi-zoom-in zoom-action-button"></i></a>
+        <a href="{% url 'seller_edit_item' item.pk %}"><i class="bi bi-pencil edit-action-button"></i></a>
+        <a href="{% url 'seller_delete_item' item.pk %}"><i class="bi bi-x-lg delete-action-button"></i></a>
+    </div>
+</div>
+{% endfor %}
+{% else %}
+<div class="replacement-text-middle">No items</div>
+{% endif %}
+
+<!--Paginator-->
+{% include 'sir_cake/paginator.html'%}
+
+</div>
+
+{% endblock content %}

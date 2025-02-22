@@ -1,0 +1,29 @@
+{% extends 'seller/base-seller.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}-Edit item{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="bigger-title-font">Edit item: {{item}}
+        <div class="emoji">&#127850;</div>
+    </div>
+    <div class=" d-flex justify-content-center">
+        <div class="new-product-div-style">
+
+            <form method="post" class="new-product-form" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form|crispy}}
+                <a href="{% url 'seller_all_items' %}">
+                    <i class="bi bi-arrow-left new-item-top-icon button-back non-link"></i>
+                </a>
+
+                <button type="submit" class="post-button-grid">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
