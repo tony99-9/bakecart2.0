@@ -11,6 +11,8 @@ __pycache__/
 build/
 develop-eggs/
 dist/
+frontend/dist/
+frontend/node_modules/
 downloads/
 eggs/
 .eggs/
@@ -128,5 +130,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Images
-sir_cake/media/product_pics/
+# Test images generated during tests
+sir_cake/media/product_pics/test*

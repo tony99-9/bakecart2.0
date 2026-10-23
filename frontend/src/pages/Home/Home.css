@@ -1,0 +1,358 @@
+/* ── BakeCart Home Page Styling ───────────────────────────── */
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-8);
+  padding-bottom: var(--sp-12);
+}
+
+/* ── 1. Hero Banner ───────────────────────────────────────── */
+.hero-banner {
+  background: linear-gradient(135deg, #2b170e 0%, #432115 50%, #582e1c 100%);
+  border-radius: 16px;
+  margin: var(--sp-4) auto 0;
+  max-width: 1320px;
+  width: calc(100% - var(--sp-8));
+  overflow: hidden;
+  box-shadow: 0 12px 36px rgba(43, 23, 14, 0.25);
+  position: relative;
+}
+
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 50%, rgba(255, 200, 150, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-banner__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--sp-8);
+  padding: var(--sp-10) var(--sp-10);
+  min-height: 380px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-banner__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  max-width: 520px;
+}
+
+.hero-banner__eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f7a072;
+}
+
+.hero-banner__title {
+  font-family: var(--font-display, Georgia, serif);
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.hero-banner__subtitle {
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
+}
+
+.hero-banner__actions {
+  margin-top: var(--sp-2);
+}
+
+.hero-banner__cta-btn {
+  background: #e85a4f;
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(232, 90, 79, 0.4);
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-banner__cta-btn:hover {
+  background: #d4473c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(232, 90, 79, 0.55);
+}
+
+/* Hero Media (Right Column) */
+.hero-banner__media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-banner__img-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  overflow: visible;
+}
+
+.hero-banner__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  display: block;
+}
+
+/* Circular "Made with Love ❤️" Badge */
+.hero-banner__badge {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(43, 23, 14, 0.82);
+  backdrop-filter: blur(8px);
+  border: 2px dashed rgba(255, 215, 185, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transform: rotate(12deg);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+.hero-banner__badge-line {
+  font-family: 'Brush Script MT', cursive, sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.1;
+  color: #f7d2b8;
+}
+
+.hero-banner__badge-heart {
+  font-size: 0.9rem;
+  margin-top: 2px;
+}
+
+/* ── 2. Category Strip ────────────────────────────────────── */
+.category-strip-section {
+  padding-top: var(--sp-3);
+  padding-bottom: var(--sp-2);
+}
+
+.category-strip {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  overflow-x: auto;
+  padding: var(--sp-2) 0 var(--sp-3);
+  scrollbar-width: thin;
+}
+
+.category-strip::-webkit-scrollbar {
+  height: 4px;
+}
+
+.category-strip::-webkit-scrollbar-thumb {
+  background: #e2ddd5;
+  border-radius: 4px;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+  min-width: 74px;
+}
+
+.category-item:hover {
+  transform: translateY(-3px);
+}
+
+.category-item__icon-bubble {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: #fbf8f4;
+  border: 1px solid #ebd9c8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.category-item:hover .category-item__icon-bubble {
+  background: #fdf2ea;
+  border-color: #e85a4f;
+  box-shadow: 0 6px 14px rgba(232, 90, 79, 0.18);
+}
+
+.category-item__icon {
+  font-size: 1.85rem;
+}
+
+.category-item__name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #3b2f28;
+  text-align: center;
+  transition: color 0.15s ease;
+}
+
+.category-item:hover .category-item__name {
+  color: #e85a4f;
+}
+
+/* ── 3. Featured Products Grid ────────────────────────────── */
+.featured-section {
+  padding-top: var(--sp-4);
+  padding-bottom: var(--sp-4);
+}
+
+.featured-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sp-5);
+}
+
+.featured-title {
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.featured-view-all {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #e85a4f;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.featured-view-all:hover {
+  color: #c93b30;
+  transform: translateX(2px);
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--sp-4);
+}
+
+.featured-empty {
+  text-align: center;
+  padding: var(--sp-8);
+  background: #fdfaf6;
+  border-radius: 12px;
+  color: #777;
+}
+
+/* ── 4. Value Proposition Strip ───────────────────────────── */
+.value-props-section {
+  padding-top: var(--sp-2);
+}
+
+.value-props-grid {
+  background: #fcf8f4;
+  border: 1px solid #ebd9c8;
+  border-radius: 14px;
+  padding: var(--sp-6) var(--sp-6);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-6);
+}
+
+.value-prop-card {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.value-prop-card__icon {
+  font-size: 2.1rem;
+  flex-shrink: 0;
+}
+
+.value-prop-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.value-prop-card__title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #271f1a;
+  margin: 0;
+}
+
+.value-prop-card__desc {
+  font-size: 0.78rem;
+  color: #786f68;
+  margin: 0;
+}
+
+/* ── Responsive Breakpoints ───────────────────────────────── */
+@media (max-width: 1200px) {
+  .featured-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-banner__inner {
+    grid-template-columns: 1fr;
+    padding: var(--sp-6);
+    text-align: center;
+  }
+  .hero-banner__content {
+    align-items: center;
+    max-width: 100%;
+  }
+  .value-props-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-4);
+  }
+}
+
+@media (max-width: 640px) {
+  .featured-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .value-props-grid {
+    grid-template-columns: 1fr;
+  }
+}

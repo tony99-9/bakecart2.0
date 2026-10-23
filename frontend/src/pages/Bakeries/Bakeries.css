@@ -1,0 +1,239 @@
+/* B2B Wholesale Bakeries & Catalogues Styling */
+
+.b2b-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: var(--sp-8) 0;
+  margin-bottom: var(--sp-6);
+}
+
+.b2b-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.b2b-badge--primary {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.b2b-badge--success {
+  background: #e6f4ea;
+  color: #137333;
+}
+
+.b2b-badge--warning {
+  background: #fef7e0;
+  color: #b06000;
+}
+
+.b2b-badge--danger {
+  background: #fce8e6;
+  color: #c5221f;
+}
+
+.b2b-badge--info {
+  background: #e8f0fe;
+  color: #1a73e8;
+}
+
+.bakery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--sp-6);
+  margin-top: var(--sp-6);
+}
+
+.bakery-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.bakery-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.bakery-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--sp-3);
+}
+
+.bakery-card__title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.bakery-card__desc {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: var(--sp-4);
+  flex-grow: 1;
+}
+
+.bakery-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  padding: var(--sp-3) 0;
+  border-top: 1px dashed var(--border);
+  border-bottom: 1px dashed var(--border);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  margin-bottom: var(--sp-4);
+}
+
+.bakery-card__meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+/* Catalogue Order Sheet */
+.catalogue-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: var(--sp-8);
+  align-items: start;
+}
+
+@media (max-width: 991px) {
+  .catalogue-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wholesale-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.wholesale-table th,
+.wholesale-table td {
+  padding: var(--sp-3) var(--sp-4);
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.wholesale-table th {
+  background: var(--surface-alt);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.order-sheet-card {
+  position: sticky;
+  top: 90px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.order-stepper {
+  display: flex;
+  justify-content: space-between;
+  margin: var(--sp-6) 0;
+  position: relative;
+}
+
+.order-stepper::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: var(--border);
+  z-index: 1;
+}
+
+.order-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  position: relative;
+  z-index: 2;
+}
+
+.order-step__circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.order-step--active .order-step__circle {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: white;
+}
+
+.order-step--completed .order-step__circle {
+  border-color: #137333;
+  background: #137333;
+  color: white;
+}
+
+.order-step__label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.order-step--active .order-step__label {
+  color: var(--primary-dark);
+}
+
+.action-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: var(--sp-4);
+}
+
+.action-modal {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  max-width: 500px;
+  width: 100%;
+  padding: var(--sp-6);
+  box-shadow: var(--shadow-lg);
+}

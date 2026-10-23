@@ -25,3 +25,16 @@ class ShippingAddress(models.Model):
 class UserStatus(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     is_seller = models.BooleanField(default=False)
+    is_dealer = models.BooleanField(default=True)
+
+
+class DealerProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='dealer_profile')
+    business_name = models.CharField(max_length=150, blank=True)
+    contact_name = models.CharField(max_length=150, blank=True)
+    phone = models.CharField(max_length=50, blank=True)
+    delivery_address = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"DealerProfile({self.business_name or self.user.username})"

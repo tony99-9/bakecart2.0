@@ -1,0 +1,200 @@
+/* Seller Hub Styles */
+.seller-hub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--sp-6);
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+}
+
+.seller-hub-badge {
+  display: inline-block;
+  background: rgba(200, 87, 47, 0.1);
+  color: var(--clr-primary);
+  font-weight: 600;
+  font-size: var(--text-xs);
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--radius-full);
+}
+
+.seller-tabs {
+  display: flex;
+  gap: var(--sp-2);
+  border-bottom: 2px solid var(--clr-border);
+  margin-bottom: var(--sp-8);
+  overflow-x: auto;
+}
+
+.seller-tab {
+  padding: var(--sp-3) var(--sp-5);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--clr-text-muted);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.seller-tab:hover {
+  color: var(--clr-primary);
+}
+
+.seller-tab--active {
+  color: var(--clr-primary);
+  border-bottom-color: var(--clr-primary);
+}
+
+/* Metric Cards Grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--sp-6);
+  margin-bottom: var(--sp-8);
+}
+
+.metric-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-6);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-card__label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--clr-text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--sp-2);
+}
+
+.metric-card__value {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--clr-text);
+  line-height: 1.1;
+  margin-bottom: var(--sp-1);
+}
+
+.metric-card__sub {
+  font-size: var(--text-xs);
+  color: var(--clr-text-subtle);
+}
+
+/* Data Table */
+.data-table-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.data-table-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--sp-4) var(--sp-6);
+  background: var(--clr-surface-2);
+  border-bottom: 1px solid var(--clr-border);
+  gap: var(--sp-4);
+  flex-wrap: wrap;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.data-table th {
+  padding: var(--sp-3) var(--sp-6);
+  background: var(--clr-surface-2);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--clr-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.data-table td {
+  padding: var(--sp-4) var(--sp-6);
+  border-bottom: 1px solid var(--clr-border);
+  font-size: var(--text-sm);
+  color: var(--clr-text);
+  vertical-align: middle;
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+.product-row-thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  background: var(--clr-surface-2);
+  display: block;
+}
+
+.product-row-thumb-fallback {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--clr-surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.badge-active {
+  background: rgba(46, 125, 50, 0.12);
+  color: #2e7d32;
+}
+
+.badge-inactive {
+  background: rgba(120, 144, 156, 0.12);
+  color: #546e7a;
+}
+
+/* Seller Form */
+.seller-form-card {
+  max-width: 680px;
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-8);
+  box-shadow: var(--shadow-sm);
+}
+
+.seller-form-card__title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--clr-text);
+  margin-bottom: var(--sp-6);
+}
+
+.image-preview-box {
+  width: 120px;
+  height: 120px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--clr-border);
+  overflow: hidden;
+  margin-top: var(--sp-2);
+}
+
+.image-preview-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

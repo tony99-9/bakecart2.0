@@ -1,0 +1,67 @@
+/* Admin Portal Styles */
+.admin-header {
+  margin-bottom: var(--sp-6);
+}
+
+.admin-badge {
+  display: inline-block;
+  background: rgba(33, 33, 33, 0.08);
+  color: var(--clr-text);
+  font-weight: 700;
+  font-size: var(--text-xs);
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--radius-full);
+}
+
+.admin-tabs {
+  display: flex;
+  gap: var(--sp-2);
+  border-bottom: 2px solid var(--clr-border);
+  margin-bottom: var(--sp-8);
+  overflow-x: auto;
+}
+
+.admin-tab {
+  padding: var(--sp-3) var(--sp-5);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--clr-text-muted);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.admin-tab:hover {
+  color: var(--clr-primary);
+}
+
+.admin-tab--active {
+  color: var(--clr-primary);
+  border-bottom-color: var(--clr-primary);
+}
+
+.admin-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  align-items: center;
+  padding: var(--sp-4) var(--sp-6);
+  background: var(--clr-surface-2);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.admin-select {
+  border: 1.5px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  background: var(--clr-surface);
+  padding: var(--sp-2) var(--sp-4);
+  font-size: var(--text-sm);
+  color: var(--clr-text);
+}
+
+.admin-select:focus {
+  border-color: var(--clr-primary);
+  outline: none;
+}
