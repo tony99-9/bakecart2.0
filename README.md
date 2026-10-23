@@ -143,8 +143,3 @@ Output:
 Ran 166 tests in 10.676s
 OK
 ```
-
----
-
-## 📄 License
-This project is open-source under the MIT License.
